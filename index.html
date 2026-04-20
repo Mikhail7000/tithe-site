@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <title>Десятина и жертва в христианстве</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font: -apple-system, 'Inter', BlinkMacSystemFont, sans-serif;
+      --bg: #fff;
+      --sidebar-bg: #f5f5f7;
+      --hover: #e8e8ed;
+      --text: #1d1d1f;
+      --text2: #6e6e73;
+      --text3: #a1a1a6;
+      --blue: #0071e3;
+      --border: #d2d2d7;
+      --border2: #e8e8ed;
+      --radius: 12px;
+      --sw: 260px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font);
+      font-size: 17px;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+    .layout { display: flex; min-height: 100vh; }
+
+    /* ── Sidebar ── */
+    aside {
+      width: var(--sw);
+      flex-shrink: 0;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      overflow-y: auto;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar-brand {
+      padding: 32px 20px 20px;
+      border-bottom: 1px solid var(--border2);
+      text-align: center;
+    }
+    .sidebar-brand .cross {
+      font-size: 1.8em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .sidebar-brand span {
+      font-size: 0.8em;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+    }
+    .sidebar-search {
+      padding: 12px;
+      border-bottom: 1px solid var(--border2);
+    }
+    .sidebar-search input {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 0.8em;
+      font-family: var(--font);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    .sidebar-search input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(0,113,227,.15);
+    }
+    .sidebar-search input::placeholder { color: var(--text3); }
+    nav { padding: 10px 12px 32px; flex: 1; }
+    nav ul { list-style: none; }
+    nav > ul > li { margin-bottom: 2px; }
+    nav > ul > li > a {
+      display: block;
+      padding: 8px 12px;
+      font-size: 0.78em;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background .15s;
+    }
+    nav > ul > li > a:hover { background: var(--hover); }
+    nav > ul > li > a.active {
+      background: var(--blue);
+      color: #fff;
+    }
+    nav ul ul { padding-left: 12px; margin-top: 2px; }
+    nav ul ul li { margin-bottom: 1px; }
+    nav ul ul a {
+      display: block;
+      padding: 5px 10px;
+      font-size: 0.74em;
+      color: var(--text2);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+    }
+    nav ul ul a:hover { background: var(--hover); color: var(--text); }
+
+    /* ── Main ── */
+    main {
+      margin-left: var(--sw);
+      flex: 1;
+      min-width: 0;
+    }
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 72px 48px 120px;
+    }
+
+    /* ── Typography ── */
+    h1 {
+      font-size: 2.1em;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      text-align: center;
+      margin-bottom: 0;
+      padding-bottom: 32px;
+    }
+    h1::after {
+      content: '';
+      display: block;
+      width: 48px; height: 3px;
+      background: var(--blue);
+      border-radius: 2px;
+      margin: 20px auto 0;
+    }
+    h2 {
+      font-size: 1.25em;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-top: 56px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border2);
+    }
+    h3 {
+      font-size: 0.95em;
+      font-weight: 600;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      color: var(--text2);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    p { line-height: 1.75; margin-bottom: 16px; letter-spacing: -0.003em; }
+    strong { font-weight: 600; }
+    ul, ol { padding-left: 22px; margin-bottom: 16px; }
+    li { line-height: 1.75; margin-bottom: 6px; letter-spacing: -0.003em; }
+    ul li::marker { color: var(--blue); }
+    ol li::marker { color: var(--blue); font-weight: 600; }
+    hr {
+      border: none;
+      height: 1px;
+      background: var(--border2);
+      margin: 48px 0;
+    }
+    blockquote {
+      background: #f5f5f7;
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin: 32px 0;
+      position: relative;
+    }
+    blockquote::before {
+      content: '"';
+      position: absolute;
+      top: 6px; left: 18px;
+      font-size: 3em;
+      color: var(--blue);
+      opacity: 0.2;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    blockquote p {
+      font-size: 1.1em;
+      font-style: italic;
+      margin: 0;
+      padding-top: 6px;
+      line-height: 1.65;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.85em;
+      font-style: normal;
+      color: var(--text2);
+    }
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 24px 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 4px rgba(0,0,0,.07);
+    }
+    thead tr { background: var(--sidebar-bg); }
+    th {
+      font-size: 0.75em;
+      font-weight: 600;
+      color: var(--text2);
+      padding: 12px 18px;
+      text-align: left;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      font-size: 0.95em;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border2);
+      background: #fff;
+    }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: #f5f5f7; }
+
+    /* ── Section card accent ── */
+    .section-num {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.7em;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-right: 8px;
+      letter-spacing: 0.02em;
+      vertical-align: middle;
+    }
+
+    /* ── Progress bar ── */
+    #progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      width: 0%;
+      background: var(--blue);
+      z-index: 999;
+      transition: width .1s;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* ── Back to top ── */
+    #btt {
+      position: fixed;
+      bottom: 28px; right: 24px;
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue);
+      font-size: 1em;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,.1);
+      opacity: 0;
+      pointer-events: none;
+      transition: all .25s;
+      z-index: 60;
+    }
+    #btt.show { opacity: 1; pointer-events: auto; }
+    #btt:hover { background: var(--blue); color: #fff; transform: translateY(-2px); }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* ── Mobile nav ── */
+    .topbar {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 52px;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      z-index: 200;
+      align-items: center;
+      padding: 0 16px;
+    }
+    .topbar-title {
+      flex: 1;
+      text-align: center;
+      font-size: 0.88em;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .burger {
+      width: 36px; height: 36px;
+      background: none; border: none;
+      cursor: pointer;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 5px;
+    }
+    .burger span {
+      display: block;
+      width: 20px; height: 1.5px;
+      background: var(--text);
+      border-radius: 1px;
+      transition: all .22s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* ── Mobile drawer ── */
+    .drawer {
+      display: none;
+      position: fixed;
+      inset: 52px 0 0 0;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 190;
+      overflow-y: auto;
+      padding: 16px 20px 40px;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity .22s, transform .22s;
+    }
+    .drawer.open { opacity: 1; transform: translateY(0); }
+    .drawer nav > ul > li > a { font-size: 1em !important; padding: 12px 14px !important; }
+    .drawer nav ul ul a { font-size: 0.88em !important; padding: 9px 12px !important; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .content { padding: 56px 32px 100px; }
+    }
+    @media (max-width: 660px) {
+      aside { display: none; }
+      main { margin-left: 0; }
+      .topbar { display: flex; }
+      .drawer { display: block; }
+      .content { padding: 76px 20px 100px; max-width: 100%; }
+      h1 { font-size: 1.6em; }
+      h2 { font-size: 1.1em; margin-top: 40px; }
+      table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      #btt { bottom: 20px; right: 16px; }
+    }
+    @supports (padding: max(0px)) {
+      .topbar { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- Mobile top bar -->
+<div class="topbar" id="topbar">
+  <button class="burger" id="burger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="topbar-title">Десятина и жертва</div>
+  <div style="width:36px"></div>
+</div>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer">
+  <nav>
+    <ul>
+      <li><a href="#top">✝ Десятина и жертва</a></li>
+      <li><a href="#s1">1. Десятина</a></li>
+      <li><a href="#s2">2. Духовный смысл</a>
+        <ul>
+          <li><a href="#s21">2.1 Признание</a></li>
+          <li><a href="#s22">2.2 Доверие</a></li>
+          <li><a href="#s23">2.3 Деньги</a></li>
+          <li><a href="#s24">2.4 Участие</a></li>
+        </ul>
+      </li>
+      <li><a href="#s3">3. Жертва</a></li>
+      <li><a href="#s4">4. Новый Завет</a></li>
+      <li><a href="#s5">5. Практика</a></li>
+      <li><a href="#s6">6. Заблуждения</a></li>
+      <li><a href="#s7">7. Вывод</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="layout">
+
+  <!-- Desktop sidebar -->
+  <aside>
+    <div class="sidebar-brand">
+      <span class="cross">✝</span>
+      <span>Десятина и жертва<br>в христианстве</span>
+    </div>
+    <div class="sidebar-search">
+      <input type="search" id="search" placeholder="Поиск..." autocomplete="off"/>
+    </div>
+    <nav id="sidenav">
+      <ul>
+        <li><a href="#top">Начало</a></li>
+        <li><a href="#s1">1. Десятина</a></li>
+        <li><a href="#s2">2. Духовный смысл</a>
+          <ul>
+            <li><a href="#s21">2.1 Признание</a></li>
+            <li><a href="#s22">2.2 Доверие</a></li>
+            <li><a href="#s23">2.3 Деньги</a></li>
+            <li><a href="#s24">2.4 Участие</a></li>
+          </ul>
+        </li>
+        <li><a href="#s3">3. Жертва</a></li>
+        <li><a href="#s4">4. Новый Завет</a></li>
+        <li><a href="#s5">5. Практика</a></li>
+        <li><a href="#s6">6. Заблуждения</a></li>
+        <li><a href="#s7">7. Вывод</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Content -->
+  <main>
+    <div class="content">
+
+      <h1 id="top">Для чего нужна десятина и жертва в христианстве</h1>
+
+      <h2 id="s1"><span class="section-num">1</span> Десятина: определение и библейское основание</h2>
+      <p><strong>Десятина</strong> (от слова «десять») — это десятая часть дохода или имущества, которую верующий отдаёт Богу через церковь.</p>
+
+      <h3>Ветхозаветное основание</h3>
+      <ul>
+        <li><strong>Левит 27:30</strong> — «И всякая десятина на земле из семян земли и из плодов дерева принадлежит Господу.»</li>
+        <li><strong>Числа 18:21</strong> — Десятина была установлена для содержания левитов (священников), которые служили в храме и не имели земельного надела.</li>
+        <li><strong>Малахия 3:10</strong> — «Принесите все десятины в дом хранилища... и Я открою вам окна небесные и изолью на вас благословение.»</li>
+      </ul>
+
+      <h3>Новозаветное основание</h3>
+      <ul>
+        <li><strong>Матфей 23:23</strong> — Иисус не отменил десятину, но указал, что главное — справедливость, милость и вера.</li>
+        <li><strong>2 Коринфянам 9:7</strong> — «Каждый уделяй по расположению сердца, не с огорчением и не с принуждением; ибо доброхотно дающего любит Бог.»</li>
+        <li><strong>1 Коринфянам 9:13-14</strong> — Служители Евангелия должны жить от Евангелия.</li>
+      </ul>
+
+      <hr/>
+
+      <h2 id="s2"><span class="section-num">2</span> Духовный смысл десятины</h2>
+
+      <h3 id="s21">2.1. Признание Божьего владычества</h3>
+      <p>Десятина — это акт признания того, что всё принадлежит Богу. Отдавая десятую часть, человек символически говорит: «Ты — источник всего, что у меня есть». Это противодействие духу жадности и самодостаточности.</p>
+
+      <h3 id="s22">2.2. Проверка доверия</h3>
+      <p>Десятина — это шаг веры. Когда человек отдаёт часть своего дохода, он доверяет Богу в том, что Тот восполнит его нужды. Это духовная дисциплина, которая укрепляет веру.</p>
+
+      <h3 id="s23">2.3. Борьба с идолом денег</h3>
+      <p><strong>Матфей 6:24</strong> — «Не можете служить Богу и маммоне.» Регулярное жертвование разрушает власть денег над человеческим сердцем. Человек перестаёт быть рабом материального.</p>
+
+      <h3 id="s24">2.4. Участие в Божьем деле</h3>
+      <p>Через десятину верующий становится соучастником распространения Евангелия, поддержки служителей, помощи нуждающимся — то есть соработником Бога на земле.</p>
+
+      <hr/>
+
+      <h2 id="s3"><span class="section-num">3</span> Жертва: определение и виды</h2>
+      <p><strong>Жертва</strong> в христианстве — это добровольное посвящение Богу чего-либо ценного: времени, денег, усилий, комфорта. Жертва шире десятины и выражает полноту посвящения.</p>
+
+      <h3>Ветхозаветные виды жертв</h3>
+      <table>
+        <thead>
+          <tr><th>Вид жертвы</th><th>Смысл</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Всесожжение</td><td>Полное посвящение Богу</td></tr>
+          <tr><td>Жертва мира</td><td>Благодарность и общение с Богом</td></tr>
+          <tr><td>Жертва за грех</td><td>Искупление, прощение</td></tr>
+          <tr><td>Жертва повинности</td><td>Восстановление после нарушения</td></tr>
+          <tr><td>Хлебное приношение</td><td>Посвящение трудов и плодов</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Высшая жертва</h3>
+      <p>Все ветхозаветные жертвы указывали на <strong>Иисуса Христа</strong> — единственную совершенную жертву за грехи всего человечества (<strong>Евреям 10:10-14</strong>). После Его смерти и воскресения кровные жертвоприношения потеряли необходимость.</p>
+
+      <hr/>
+
+      <h2 id="s4"><span class="section-num">4</span> Жертва в Новом Завете</h2>
+
+      <h3>4.1. Жертва хвалы</h3>
+      <p><strong>Евреям 13:15</strong> — «Итак будем через Него непрестанно приносить Богу жертву хвалы.» Поклонение, молитва, прославление — это жертва, угодная Богу.</p>
+
+      <h3>4.2. Жертва добрых дел</h3>
+      <p><strong>Евреям 13:16</strong> — «Не забывайте также благотворения и общительности, ибо таковые жертвы благоугодны Богу.» Помощь ближнему — это жертва Богу.</p>
+
+      <h3>4.3. Жертва тела</h3>
+      <p><strong>Римлянам 12:1</strong> — «Представьте тела ваши в жертву живую, святую, благоугодную Богу.» Жизнь, посвящённая Богу, — это высшая форма жертвы в Новом Завете.</p>
+
+      <h3>4.4. Жертва финансовая</h3>
+      <p><strong>Филиппийцам 4:18</strong> — Павел называет пожертвование церкви «благовонным аром, жертвою приятною, благоугодною Богу». Финансовое пожертвование — это духовное поклонение.</p>
+
+      <hr/>
+
+      <h2 id="s5"><span class="section-num">5</span> Практическое применение сегодня</h2>
+
+      <h3>Десятина в современной церкви</h3>
+      <ul>
+        <li>Поддержка пасторов и служителей</li>
+        <li>Содержание здания церкви</li>
+        <li>Финансирование миссий и евангелизации</li>
+        <li>Помощь нуждающимся внутри общины</li>
+      </ul>
+
+      <h3>Как правильно жертвовать</h3>
+      <ol>
+        <li><strong>С радостью</strong> — не из страха или осуждения (2 Кор. 9:7)</li>
+        <li><strong>Регулярно</strong> — как часть духовной дисциплины (1 Кор. 16:2)</li>
+        <li><strong>Намеренно</strong> — заранее планируя, а не остаточно</li>
+        <li><strong>В молитве</strong> — посвящая жертву Богу осознанно</li>
+        <li><strong>С верой</strong> — доверяя, что Бог восполнит</li>
+      </ol>
+
+      <hr/>
+
+      <h2 id="s6"><span class="section-num">6</span> Распространённые заблуждения</h2>
+
+      <h3>«Десятина — это только для Ветхого Завета»</h3>
+      <p>Хотя Моисеев закон упразднён Христом, принцип щедрого даяния усиливается в Новом Завете. Иисус говорил о большей праведности, а не меньшей.</p>
+
+      <h3>«Бог нуждается в моих деньгах»</h3>
+      <p><strong>Псалом 49:12</strong> — «Если бы Я взалкал, то не сказал бы тебе; ибо Моя вселенная и всё, что наполняет её.» Бог не нуждается в деньгах — жертва нужна для преображения самого человека.</p>
+
+      <h3>«Жертвовать нужно только в церкви»</h3>
+      <p>Жертва включает служение, время, таланты, помощь ближним — это не только финансовый вопрос.</p>
+
+      <hr/>
+
+      <h2 id="s7"><span class="section-num">7</span> Вывод</h2>
+      <p>Десятина и жертва в христианстве — это не религиозная обязанность и не способ «купить» Божье благословение. Это:</p>
+      <ul>
+        <li><strong>Выражение доверия</strong> Богу как источнику всего</li>
+        <li><strong>Духовная дисциплина</strong>, освобождающая от власти денег</li>
+        <li><strong>Участие в Божьем деле</strong> на земле</li>
+        <li><strong>Поклонение</strong> в практической форме</li>
+        <li><strong>Путь благословения</strong> — не потому что «заработали», а потому что сердце открыто к Богу</li>
+      </ul>
+
+      <blockquote>
+        <p>«Блаженнее давать, нежели принимать.»</p>
+        <cite>— Деяния 20:35</cite>
+      </blockquote>
+
+    </div>
+  </main>
+</div>
+
+<a href="#top" id="btt" title="Наверх">↑</a>
+
+<script>
+  // Progress bar
+  var prog = document.getElementById('progress');
+  window.addEventListener('scroll', function() {
+    var s = document.documentElement;
+    var pct = (s.scrollTop || document.body.scrollTop) / ((s.scrollHeight || document.body.scrollHeight) - s.clientHeight) * 100;
+    prog.style.width = pct + '%';
+    document.getElementById('btt').classList.toggle('show', (s.scrollTop || document.body.scrollTop) > 400);
+  }, { passive: true });
+
+  // Active nav highlight
+  var sections = document.querySelectorAll('[id]');
+  var navLinks = document.querySelectorAll('#sidenav a');
+  window.addEventListener('scroll', function() {
+    var scrollY = window.scrollY + 80;
+    var current = '';
+    sections.forEach(function(s) {
+      if (s.offsetTop <= scrollY) current = s.id;
+    });
+    navLinks.forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+
+  // Search filter
+  document.getElementById('search').addEventListener('input', function() {
+    var q = this.value.toLowerCase();
+    navLinks.forEach(function(a) {
+      var li = a.closest('li');
+      li.style.display = (!q || a.textContent.toLowerCase().includes(q)) ? '' : 'none';
+    });
+  });
+
+  // Mobile drawer
+  var burger = document.getElementById('burger');
+  var drawer = document.getElementById('drawer');
+  var open = false;
+  burger.addEventListener('click', function() {
+    open = !open;
+    burger.classList.toggle('open', open);
+    drawer.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      open = false;
+      burger.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+</body>
+</html>
