@@ -5,24 +5,87 @@
   <title>Десятина и жертва</title>
 
   <!-- ТЕМА -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+  <link id="theme-style" rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+
+  <style>
+    body {
+      font-size: 16px;
+    }
+
+    /* фикс sidebar */
+    .sidebar {
+      position: fixed !important;
+    }
+
+    .content {
+      margin-left: 300px;
+    }
+
+    /* кнопка темы */
+    .theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #111;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 9999;
+      font-size: 14px;
+    }
+
+    /* светлая тема */
+    .light-theme {
+      background: #ffffff !important;
+      color: #111 !important;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app"></div>
 
+  <div class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</div>
+
   <script>
+    function toggleTheme() {
+      const theme = document.getElementById('theme-style');
+
+      if (theme.href.includes('vue.css')) {
+        theme.href = '//cdn.jsdelivr.net/npm/docsify@4/lib/themes/buble.css';
+      } else {
+        theme.href = '//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css';
+      }
+    }
+
     window.$docsify = {
       name: 'Десятина и жертва',
       repo: '',
 
-      loadSidebar: true,   // включает левое меню
-      subMaxLevel: 3,      // вложенность (2.1, 2.2 и т.д.)
-      auto2top: true
+      loadSidebar: true,
+      subMaxLevel: 3,
+      auto2top: true,
+
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: 'Поиск...',
+        noData: 'Ничего не найдено'
+      }
     }
   </script>
 
   <!-- DOCSIFY -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+  <!-- ПЛАГИНЫ -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+
 </body>
 </html>
