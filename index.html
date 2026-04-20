@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Десятина и жертва</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" />
 </head>
+
 <body>
   <div id="app"></div>
 
   <script>
     window.$docsify = {
       name: 'Десятина и жертва',
-      loadSidebar: true
+      repo: '',
+
+      loadSidebar: true,   // 🔥 ВКЛЮЧАЕТ ЛЕВОЕ МЕНЮ
+      subMaxLevel: 3,      // вложенность (как у тебя 2.1, 2.2 и т.д.)
+      auto2top: true
     }
   </script>
 
