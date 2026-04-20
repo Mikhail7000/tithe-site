@@ -1,61 +1,20 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Десятина и жертва</title>
-<style>
-body {
-    margin: 0;
-    font-family: -apple-system, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #020617);
-    color: #e2e8f0;
-}
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 60px 20px;
-}
-h1 {
-    font-size: 42px;
-    color: #38bdf8;
-}
-h2 {
-    color: #22c55e;
-}
-.block {
-    background: rgba(30,41,59,0.8);
-    padding: 25px;
-    border-radius: 16px;
-    margin-bottom: 20px;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Десятина и жертва</title>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
 </head>
 <body>
+  <div id="app"></div>
 
-<div class="container">
-    <h1>Десятина и жертва</h1>
+  <script>
+    window.$docsify = {
+      name: 'Десятина и жертва',
+      loadSidebar: true
+    }
+  </script>
 
-    <div class="block">
-        <h2>Что такое десятина</h2>
-        <p>Это признание Бога источником всего.</p>
-    </div>
-
-    <div class="block">
-        <h2>Зачем нужна жертва</h2>
-        <p>Это выражение любви и благодарности.</p>
-    </div>
-
-    <div class="block">
-        <h2>Духовный смысл</h2>
-        <p>Это вопрос сердца, а не денег.</p>
-    </div>
-
-    <div class="block">
-        <h2>Практика</h2>
-        <p>Поддержка церкви и распространение Евангелия.</p>
-    </div>
-</div>
-
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 </body>
 </html>
