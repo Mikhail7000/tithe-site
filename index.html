@@ -52,10 +52,21 @@
 
     /* ── Sidebar ── */
     .sidebar {
+      display: block !important;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      bottom: 0 !important;
+      width: var(--sidebar-w) !important;
       background: var(--bg-sidebar) !important;
       border-right: 1px solid var(--border) !important;
-      width: var(--sidebar-w) !important;
       padding: 0 !important;
+      overflow-y: auto !important;
+      z-index: 10 !important;
+    }
+
+    .content {
+      margin-left: var(--sidebar-w) !important;
     }
 
     .app-name {
@@ -511,9 +522,10 @@
 
     /* ── Mobile ── */
     @media (max-width: 680px) {
-      /* Hide docsify sidebar */
+      /* Hide docsify sidebar on mobile */
       .sidebar { display: none !important; }
       .content { margin-left: 0 !important; }
+      .markdown-section { max-width: 100% !important; }
 
       /* Show mobile UI */
       .mobile-nav { display: flex !important; }
